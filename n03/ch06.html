@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Beneath the Saltwood Sky</title>
+ <style>
+    /* Hide the default Google Translate banner/dropdown */
+    .goog-te-banner-frame, #google_translate_element {
+      display: none !important;
+    }
+    body {
+      top: 0px !important;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- Toggle Button -->
+<button onclick="document.body.classList.toggle('dark-mode')" style="cursor:pointer; padding: 0.5rem 1rem; border-radius: 6px; border: 1px solid var(--border-color); background: var(--code-bg); color: var(--text-color);">
+  🌙 Toggle Light/Dark
+</button>
+
+<!-- Language Switch Buttons -->
+<button onclick="translateTo('zh-TW')">繁體中文 (Traditional Chinese)</button>
+<button onclick="translateTo('en')">English</button>
+
+<h1 id="chapter-6-the-architecture-of-ghosts">Chapter 6: The Architecture of Ghosts</h1>
+
+<p>
+Under a miserable November downpour lashing across the East Erden capital forensic facility, the line between desperate fugitives and high-stakes infiltrators vanishes inside a freezing, rain-slicked surveillance van. Armed with bootlegged Cranston University tech, unstable optical receivers, and sheer adrenaline, Sarah Hayes and Tony Brown race against a ticking clock to breach an air-gapped Level-3 cleanroom. From modulating invisible data streams through an overhead LED fixture to executing a nerve-wracking laser induction payload during a staged coffee shop distraction, this chapter thrusts two wounded refugees into an agonizing cyber-heist where a single millimeter of alignment drift or an unexpected flick of a light switch means the difference between pulling off the ultimate breach and disappearing forever into a Combine interrogation cell.
+  
+</p>
+<details> 
+<p><summary><strong>📋 TECH DOSSIER: THE TROJAN FIXTURE</strong></summary></p>
+<p><strong>Classification:</strong> Parasitic Supply-Chain Surveillance Node<br />
+<strong>Target:</strong> Airborne/Air-Gapped Forensic Environments</p>
+<p>To a layman, a security camera is the ultimate surveillance tool. To an intelligence operative, a camera is a clumsy, visible liability. Cameras have blind spots, they cannot look through hands to read a keyboard, and high-security computer monitors are fitted with polarized filters that render them completely black on video.</p>
+<p>This modified LED panel operates on entirely different principles of physics, exploiting three invisible vulnerabilities:</p>
+<ul>
+<li><p><strong>The Power "Parasite" (Zero Batteries):</strong> Traditional bugs have a battery life clock ticking down. This device has no battery. It is wired directly into the LED panel’s internal circuit board before it leaves the factory. It behaves like an electrical leech, siphoning a microscopic fraction of the building's main power. Even when the room's lights are turned off at night, the bug feeds on the low-voltage standby current running through the ceiling. It never sleeps.</p></li>
+<li><p><strong>The "Visual" Microphone:</strong> Standard microphones require tiny holes to catch sound, which security sweeps can detect with lasers. This bug uses a <strong>MEMS sensor</strong>—a microphone the size of a grain of salt hidden inside the lamp's casing. It doesn't listen to the air; it listens to <em>structural vibrations</em>. When a technician types, the microscopic vibration of the keystrokes travels up the walls into the ceiling. The bug records the distinct "acoustic signature" of each key, allowing software to recreate exactly what was typed, including master passwords.</p></li>
+<li><p><strong>The TEMPEST Screen Stealer:</strong> Computer monitors, HDMI cables, and motherboards leak tiny, invisible waves of electromagnetic radiation into the air as they display pixels. A standard camera just sees the back of the monitor. This bug acts as a digital mirror. Its built-in antenna captures these stray radio emissions through the air and translates them back into a perfect, live clone of the technician's screen.</p></li>
+<li><p><strong>The Invisible Data Firehose (VLC):</strong> Sending data out via Wi-Fi or radio frequencies (RF) would instantly trip the lab’s spectrum alarms. Instead, the bug converts the stolen data into binary code (1s and 0s) and forces the LED lights to flicker <strong>20 million times per second</strong>. It transforms the room's lightbulbs into a high-speed router. The human eye cannot perceive a flicker that fast, allowing the data to beam straight out of the window to the operatives waiting below completely undetected.</p></li>
+</ul>
+
+</details>
+<details>
+
+<p><summary><strong>🛠️ TECHNICAL OPERATIONAL MANUAL</strong></summary></p>
+<p><strong>DOCUMENT REF:</strong> TM-8842-VLC/NODE<br />
+<strong>RESTRICTION:</strong> LEVEL 5 // COMPARTMENTED EYES ONLY<br />
+<strong>PROJECT CODENAME:</strong> <em>PHANTOM LUMEN</em><br />
+<strong>EQUIPMENT CLASS:</strong> INTEGRATED PARASITIC SURVEILLANCE SUITE</p>
+<p><strong>1. SYSTEM OVERVIEW</strong></p>
+<p>The <strong>Model 12-B Parasitic Node</strong> is a solid-state, zero-emission intelligence collection unit designed for pre-installation insertion into standard commercial and cleanroom LED lighting infrastructure (Supply Chain Interdiction). Unlike conventional optical or RF counter-measure devices, the 12-B operates passively within the physical and electromagnetic structure of the target environment, mitigating standard Technical Surveillance Counter-Measures (TSCM).</p>
+<p>[ Building Main Power (110V/220V) ]</p>
+<p>│</p>
+<p>▼</p>
+<p>[ LED Driver / Transformer ] ──(Standby Line Always Live)──► [ PARASITE CHIP ]</p>
+<p>│ │</p>
+<p>▼ (Active State Only) ▼ (Data Extraction)</p>
+<p>[ LED Emitters ] ◄───[ 20MHz High-Speed Frequency ]──────────┘</p>
+<p>│</p>
+<p>▼ (Invisible Flicker)</p>
+<p>[ To Operative Photodiode ]</p>
+<p><strong>2. CORE SUBSYSTEMS &amp; SPECIFICATIONS</strong></p>
+<p><strong>2.1 Power Harvesting Module (Parasitic Leech)</strong></p>
+<ul>
+<li><p><strong>Operational Mechanism:</strong> Hardwired downstream from the fixture's primary AC/DC rectifier step-down transformer.</p></li>
+<li><p><strong>Current Draw:</strong> &lt; 45 microamps (μA) in standby mode; &lt; 120 microamps (μA) during active VLC transmission burst.</p></li>
+<li><p><strong>Dampened Signature:</strong> Power draw falls below the standard margin of error for commercial automated building management systems (BMS), rendering the fluctuation undetectable to grid audits.</p></li>
+<li><p><strong>Dark-State Protocol:</strong> When the primary light switch is set to "OFF," the module automatically draws from the facility's residual standby current or emergency auxiliary grids.</p></li>
+</ul>
+<p><strong>2.2 Acoustic Capture Array (MEMS Sensor)</strong></p>
+<ul>
+<li><p><strong>Hardware:</strong> Micro-Electro-Mechanical Systems (MEMS) non-directional acoustic transducer (Size: 1.2mm × 1.6mm).</p></li>
+<li><p><strong>Acoustic Conduction:</strong> Bypasses air-gap limitations by utilizing the aluminum frame of the ceiling fixture as a structural diaphragm.</p></li>
+<li><p><strong>Target Metrics:</strong> Capable of capturing localized atmospheric pressure waves (vocalized speech) and solid-substrate kinetic friction waves (mechanical keyboard keystrokes) up to a radius of 6 meters through structural resonance.</p></li>
+</ul>
+<p><strong>2.3 Electromagnetic Emanation Interceptor (TEMPEST Rig)</strong></p>
+<ul>
+<li><p><strong>Antenna Array:</strong> Micro-strip conformal patch antenna integrated directly into the reflective backing of the LED panel.</p></li>
+<li><p><strong>Bandwidth Reception:</strong> Tuned to capture ultra-weak Van Eck phreaking emanations (200MHz - 1.2GHz) generated by non-shielded computer logic boards, HDMI video cables, and terminal displays.</p></li>
+<li><p><strong>Data Processing:</strong> Real-time on-board rasterization converts unshielded stray radio emissions into a digital pixel map prior to storage/transmission.</p></li>
+</ul>
+<p><strong>3. DATA EXTRADICTION PROTOCOL (VLC)</strong></p>
+<p>Conventional radio frequency (RF) broadcasts are prohibited due to localized spectrum-monitoring sensors within forensic facilities. Data extraction must utilize <strong>Visible Light Communication (VLC)</strong>.</p>
+<ol type="1">
+<li><p><strong>Buffering:</strong> Captured TEMPEST files and acoustic keystroke logs are heavily compressed and stored in an internal, X-ray-shielded 128GB flash memory block.</p></li>
+<li><p><strong>Modulation:</strong> Upon receiving an external, line-of-sight laser trigger, the processor modulates the current feeding the LED panel.</p></li>
+<li><p><strong>Baud Rate:</strong> Data is serialized into binary format and emitted via imperceptible light intensity shifts at a baseline frequency of <strong>20 Megahertz (MHz)</strong>.</p></li>
+<li><p><strong>Operational Blind Spot:</strong> Because the human eye's flicker fusion threshold is capped at approximately 60 Hertz (Hz), the 20MHz data stream remains entirely invisible to target personnel inside the laboratory.</p></li>
+</ol>
+<p><strong>4. TSCM VULNERABILITY MITIGATION (Counter-Sweeping Defense)</strong></p>
+<ul>
+<li><p><strong>Thermal Anomaly:</strong> The chip utilizes a thermal dissipation layer that spreads heat evenly across the entire surface of the fixture. Thermal imaging sweeps (FLIR) will see a uniform heat signature, masking the bug as standard operational lamp ballast.</p></li>
+<li><p><strong>Non-Linear Junction Detection (NLJD):</strong> The silicon components are shielded in a high-density, carbon-doped resin. When swept by security personnel using an NLJD radar beam, the bug's harmonic reflections are muffled, blending in with the background metal screws, brackets, and structural wires of the ceiling.</p></li>
+</ul>
+</details>
+  
+<hr>
+<p><strong>Act 1: The Ghost in the Ceiling</strong></p>
+<p>The inside of the surveillance van smelled of cold rain, wet wool, hot processors, and the faint, bitter tang of stale coffee.</p>
+<p>Outside, a miserable November downpour lashed relentlessly against the corrugated tin side of the van, parked at the back of an unlit lot across from the East Erden capital forensic facility. Three stories up, behind heavily tinted, rain-streaked glass, the Level-3 cleanroom glowed like a sterile white aquarium in the dark.</p>
+<p>Tony pressed his eye to the rubber eyepiece of the optical telescope mounted on the chassis. His fingers were stiff with cold, trembling slightly as he fought the focus ring.</p>
+<p>"Anything?" Sarah asked, her voice tight, hovering over the lit keyboard. Her face was washed in the harsh, flickering amber of a dozen failing terminal windows.</p>
+<p>"No. It’s a mess," Tony muttered, letting out a breath that fogged the eyepiece. He wiped it frantically with his sleeve. "Every time a heavy truck rumbles down the boulevard, the van’s suspension bounces two millimeters. Two millimeters down here shifts the laser focal point three feet off target up there."</p>
+<p>"Adjust the gyro-stabilizer," Sarah urged, her eyes darting across error logs cascading down her primary monitor: ERR_VLC_SYNC_LOST // SIGNAL-TO-NOISE: CRITICAL FRAME_DROP: 94.2%</p>
+<p>"I <em>did</em> adjust it!" Tony snapped, the frustration cracking through his usual calm. "Henry said three turns past the lock-nut. I gave it three turns! But the optical receiver isn't locking onto the fixture. It's picking up rain refractions off the windowpane instead of the LED ballast."</p>
+<p>Sarah slammed her palm lightly against the edge of the console. "We're four minutes away from Smith's lunch break, Tony! If he logs off before we capture the carrier wave, the terminal goes dark for the night."</p>
+<p>She pulled up the schematic Henry had drawn on a greasy shop napkin back at the dry dock. The diagram looked simple enough—a parasitic optical modulator dropped into LED Fixture Alpha-Four, designed to flicker at twenty million cycles per second and project an invisible data stream through the glass. But in reality, crammed inside a freezing van with amateur gear, nothing was matching Henry’s confident sketches.</p>
+<p>"Did Henry even tap the right fixture?" Sarah whispered, a cold knot of self-doubt twisting in her stomach. "What if the facility electrician swapped the ballast during Monday’s maintenance? What if we’re aiming at a dead lightbulb?"</p>
+<p>"He didn't tap the wrong light," Tony said, though his own voice lacked conviction. He rubbed his bloodshot eyes, shivering inside his damp mechanic’s jacket. "Look at the serial barcode on the fixture casing through the scope—<em>FX-LED-302-C04</em>. It matches the shipping invoice Henry intercepted. The hardware is in there. We're just screwing up the reception."</p>
+<p>"Then why isn't the MEMS acoustic sensor picking up the keyboard vibration?" Sarah demanded, sliding a physical audio fader up.</p>
+<p>A deafening wall of harsh, blown-out static roared from the van's monitors. It sounded like grinding metal mixed with a jet engine.</p>
+<p>Sarah winced, shoving her headphones down around her neck. "The acoustic sensor is reading the van's idling engine and the facility's HVAC exhaust! The noise floor is completely drowning out the ceiling grid!"</p>
+<p>"Kill the engine," Tony said suddenly.</p>
+<p>Sarah blinked. "What? It’s three degrees outside—"</p>
+<p>"Kill the engine, Sarah! The diesel vibration is traveling right up the tripod legs into the photodiode!"</p>
+<p>Sarah reached over and turned the ignition key. The low thrum of the van died instantly.</p>
+<p>A heavy, suffocating cold settled over the small cabin. Rain hammered against the roof like iron shot. The silence inside the van felt sudden, razor-sharp, and absolute.</p>
+<p>"Okay," Sarah breathed, her hands shaking as she pulled her wool cap lower over her ears. "Engine's dead. Audio gain set to manual override. Filtering out everything under four hundred hertz."</p>
+<p>On her secondary screen, the jagged wall of red audio noise collapsed into a flat, steady blue line.</p>
+<p>"Now... the optical line," Tony rasped. He wedged a folded shop rag underneath the base of the telescope mount, using his own weight to lock the tripod solid against the metal floorboards. He held his breath, locking his arms, turning himself into a human brace. "Sarah, bypass the automated gain controller. Write a manual bandpass filter for twenty megahertz. Don't rely on Henry's auto-script—it's trying to calibrate for a clear sky."</p>
+<p>Sarah’s fingers flew across the mechanical keys, cold joints clicking against the plastic caps. She stripped out the generic protocol code line by line, typing a raw mathematical bandpass filter directly into the buffer:</p>
+<p>set frequency_carrier = 20,000,000</p>
+<p>apply highpass_filter(cutoff=19.8M)</p>
+<p>apply lowpass_filter(cutoff=20.2M)</p>
+<p>force_sync(VLC_NODE_C04)</p>
+<p>She hovered her thumb over the ENTER key. Her chest rose and fell in shallow, frosty breaths. "If this doesn't work... we've burned the receiver."</p>
+<p>"Hit it," Tony whispered, holding his breath, his muscles rigid against the scope.</p>
+<p>Sarah slammed the key.</p>
+<p>For two agonizing seconds, the screen went completely black. The error codes vanished. The van was dead silent except for the drumming rain.</p>
+<p>Then, with a sharp, high-pitched electronic chime, the center monitor flared to life.</p>
+<p>A single green status indicator turned from flashing crimson to solid, luminous emerald: VLC LINK: LOCKED [20.00 MHz] TELEMETRY: STABLE</p>
+<p>"We have it!" Sarah gasped, her eyes widening in disbelief. "The light modulation is clear!"</p>
+<p>"Look at the LiDAR matrix!" Tony blurted, staring through the eyepiece as the optical feed stabilized.</p>
+<p>On Sarah's main screen, the pitch-black window exploded into a storm of glowing green particles. Millions of light pulses mapped the interior of the Level-3 cleanroom into a crisp, three-dimensional wireframe point cloud. A translucent green silhouette moved across the screen—Dr. Smith, sitting at his terminal desk.</p>
+<p>Through the MEMS audio array, the harsh static dissolved into the crisp, rhythmic <em>click-clack</em> of a mechanical keyboard, clear as a bell.</p>
+<p>The AI acoustic decoder instantly began populating the terminal window:</p>
+<p>USER: Admin_Dr_Smith<br />
+PASS: 7499#Alpha_Forensics</p>
+<p>"We got the credentials!" Sarah laughed out loud, a breathy, breathless sound.</p>
+<p>Beside it, the TEMPEST electromagnetic receiver caught the stray radio signals leaking from the unshielded monitor inside the lab. A pixel-perfect digital mirror of Dr. Smith's desktop materialized on Sarah's third screen:</p>
+<p>FILE ACQUIRED: ASSET_LOC_LOG<br />
+PRIMARY STORAGE: VAULT-LOCKER 4B<br />
+BACKUP COPY: ARCHIVE-SAFE 02 (OFFSITE SCHEDULE: TUESDAY 0600)</p>
+<p>"Vault-Locker Four-B..." Tony read off the screen, letting out a long, ragged exhale as he finally let go of the telescope. The tension that had held his posture stiff for the past hour melted away all at once. "We actually did it. Henry's crazy ghost-light actually worked."</p>
+<p>Sarah spun around in her swivel chair. Overwhelmed by the sudden, explosive rush of relief and adrenaline after forty minutes of pure panic, she threw her arms around Tony's neck.</p>
+<p>Tony caught her, laughing out loud in genuine surprise, lifting her slightly off the chair as he squeezed her tight. They held on to each other in the cold, dark van—surrounded by the blue hum of their victory, their frostbitten breaths mingling in the air.</p>
+<p>When they pulled back, Sarah was grinning, her eyes shining in the screen light, the lingering terror of failure completely replaced by the fierce, thrilling spark of a real team.</p>
+<p>"We know where the drive is, and we know where the backup is stored," Tony said, pulling his face away from the telescope. "But we’re flying blind on the physical entry. If we don't have the building’s internal structural blueprints, we’ll trigger a pneumatic lockout the second we breach the floor. We need the facility floor plan."</p>
+<p>"The master floor plans are stored on the same air-gapped server," Sarah said, her jaw tightening. "The lightbulb can only watch and listen, Tony. It's a one-way pipeline. We can’t push a command into that machine to make him open the file. To get the blueprints, we need a physical bridge."</p>
+<p>Tony checked his watch. "11:58. He’s going to lunch. Initiate Phase Two."</p>
+
+
+<p> <a href="https://youtu.be/qLm72UKM3Io" target=blank>
+  <img src=image/ch06-01.png width="800">
+   ▶️YouTube short Vidoe 🎬 of this scene </a>
+</p>
+  
+<hr>
+  
+<p><strong>Act 2: The Coffee Shop Bridge</strong></p>
+<p>Two blocks away, the air inside <em>Javabean Express</em> was thick with the rich scent of dark-roasted espresso, boiling steam, and damp wool.</p>
+<p>Lunch-hour patrons packed the narrow cafe, their voices mingling with the violent hiss of the espresso machine's steam wand. Sarah stood near the condiment bar, her heart hammering against her ribs. Beneath her oversized beige trench coat, her left sleeve hid an experimental, high-frequency <strong>Near-Field Laser Induction Injector</strong>—a bootlegged piece of Cranston University tech Henry had rigged with a micro-focus UV laser diode.</p>
+<p>She wasn't a polished field operative; she was a fugitive engineering student terrified that a single dropped wavelength would land her in a Combine interrogation cell.</p>
+<p>At the end of the pickup counter stood Dr. Smith, wearing a heavy tweed coat over his blue forensic scrubs. His eyes were glued to his smartphone, his mind clearly preoccupied with the backlog of encrypted drives waiting in the cleanroom up the street.</p>
+<p>"Order for Smith! Double-shot macchiato!" the barista shouted.</p>
+<p>Smith set his smartphone, laboratory security badge, and personal keychain—holding his military-grade IronKey USB—onto the polished oak counter, reaching out both hands to grab his coffee cup.</p>
+<p><em>Now.</em></p>
+<p>Sarah took a sharp breath, tapped the micro-switch inside her palm to activate her AR contact lens display, and stepped into the aisle. A faint, glowing reticle materialized in her right field of vision.</p>
+<p>She angled her body, pretending to dig through her canvas laptop bag, and bumped hard into Smith's right shoulder.</p>
+<p>"Oh, god! I am so sorry," Sarah gasped, letting her shoulder roll into the impact.</p>
+<p>Her heavy canvas bag clattered against the counter lip. Smith instinctively recoiled, his hand darting out to catch his sloshing coffee cup. As planned, his keychain remained resting on the counter—exactly four inches from Sarah's left sleeve.</p>
+<p>Sarah dropped to one knee, her long coat sleeve extending over the counter edge. Hidden inside her cuff, the micro-laser diode hummed to life with an ultra-high-frequency whine, invisible to the human eye.</p>
+<p>The injector didn't need a physical swap. Using focused ultraviolet laser pulses, it aimed directly at the IronKey's exposed aluminum casing, leveraging quantum photo-electric induction to write a Trojan microcode payload directly into the controller chip's shadow flash memory.</p>
+<p>A translucent red countdown timer began ticking down in Sarah's AR lens display:</p>
+<p>[INDUCTION LINK: LOCKED]<br />
+[PAYLOAD INJECTION IN PROGRESS: 5.0 SECONDS]<br />
+0:05.0...</p>
+<p>Sarah reached down with her right hand to gather her fallen papers, keeping her left wrist locked perfectly still, three inches above Smith's drive.</p>
+<p>0:04.1... 0:03.4...</p>
+<p>Suddenly, the barista slammed a heavy metal milk pitcher onto the stainless steel steam grate beside them. The sudden vibration jolted the counter.</p>
+<p>[ALERT: LASER ALIGNMENT DRIFT - 1.2mm]<br />
+[TRANSFER RATE DROPPED TO 42%]<br />
+0:02.8...</p>
+<p><em>No!</em> Sarah’s blood ran cold. The timer paused as the reticle flickered wildly.</p>
+<p>Smith was already grabbing a thick stack of paper towels from the dispenser, his face tightening in annoyance. "Watch it, miss!" he grunted, starting to turn back toward his keys.</p>
+<p>"I'm so clumsy! Let me help you with those napkins!" Sarah blurted out, her voice a flustered, high-pitched blur.</p>
+<p>She deliberately knocked her iced latte over with her right hand. A wave of sticky coffee and ice flooded across the counter, washing right up to Smith's tweed coat sleeve.</p>
+<p>"Ah! Damn it!" Smith yelped, leaping backward, his hands waving in the air to save his smartphone and coat.</p>
+<p>In the chaos, Sarah re-aligned her left wrist over the IronKey. The reticle snapped back to solid emerald:</p>
+<p>[ALIGNMENT RESTORED]<br />
+0:01.8... 0:01.0... 0:00.3...</p>
+<p>Smith reached down, his fingers literally brushing the top of his keyring.</p>
+<p>0:00.0 // INJECTION COMPLETE [100% PAYLOAD BURNED]<br />
+[TROJAN MEMORY PERSISTENT]</p>
+<p>The laser shut off silently.</p>
+<p>"Here—let me wipe that counter for you!" Sarah stammered, pulling a bundle of dry tissues from her pocket and wiping the coffee spill right beside his hand.</p>
+<p>Smith snatched his original keys off the counter, completely unaware that his secure drive's controller chip now harbored a dormant, highly sophisticated software parasite. He checked his phone, saw no coffee damage, and glared at Sarah with deep irritation.</p>
+<p>"Just... watch where you're going next time," Smith grunted, shoving his keys deep into his coat pocket.</p>
+<p>"I will! Have a wonderful day!" Sarah called out warmly.</p>
+
+  <p> <a href="https://youtu.be/eyPHW57ZKSo" target=blank>
+  <img src=image/ch06-02.png width="800">
+   ▶️YouTube short Vidoe 🎬 of this scene </a>
+</p>
+  
+  
+<p>She watched him turn and push through the glass doors out into the gray November rain.</p>
+<p>The moment the door closed behind him, Sarah leaned back against the counter, letting out a long, shuddering breath as her knees nearly gave way. She tapped her hidden collar communicator, her AR lens clearing back to normal vision.</p>
+<p>"Tony," Sarah whispered, a fierce, triumphant smile breaking through her exhaustion. "The Trojan is in his controller memory. Phase Two is complete."</p>
+
+<hr>
+  
+<h3 id="act-3-the-empty-room"><strong>Act 3: The Empty Room</strong> </h3>
+<p>Back in the freezing interior of the van, Sarah’s secondary monitor pinged with a low, rhythmic frequency pulse.</p>
+<p>"Telemetry locked," Sarah whispered, her frosty breath swirling in the amber glow of the screens. "The payload is active. Smith just plugged the IronKey into the cleanroom terminal."</p>
+<p>Through the emerald LiDAR point cloud, Tony watched the translucent green silhouette of Dr. Smith sit down at his desk. On the TEMPEST screen, they saw a live, pixel-perfect mirror of Smith’s desktop as he loaded his forensic case files.</p>
+<p>"Now we wait for the trigger," Tony murmured, his hands tight on the edge of the console.</p>
+<p>Because the Level-3 cleanroom was strictly air-gapped, their setup was a strictly one-way listening post. The LED fixture overhead could modulate light to transmit data <em>out</em> to the van, but there was no radio receiver inside the facility to take commands <em>in</em>. The modified IronKey payload had to run entirely on its own pre-programmed microcode.</p>
+<p>Sarah’s genius lay in how she bypassed the lack of remote control: she tapped into the workstation's built-in <strong>Ambient Light Sensor (ALS)</strong>—the tiny photodiode on the monitor bezel used by the OS for automatic brightness adjustment.</p>
+<p>The microcode logic was simple, precise, and foolproof:</p>
+<ol type="1">
+<li><p>IF AMBIENT_LUX &lt; 10 (Room lights turned off) \(\rightarrow\) Execute HID keyboard injection, launch blueprint file, and beam TEMPEST raster stream.</p></li>
+<li><p>IF AMBIENT_LUX &gt; 50 (Room lights turned on / door opens) \(\rightarrow\) Instantly execute ALT+F4, purge memory buffer, and restore original desktop spreadsheet.</p></li>
+</ol>
+<p>"Smith is wrapping up his first case batch," Tony noted, watching the point cloud.</p>
+<p>Inside the cleanroom, Dr. Smith stretched his arms, stood up from his chair, and reached for the wall switch by the door. Following standard forensic energy-saving protocol for Level-3 air-gapped labs, he flicked the main overhead fluorescent lights off before stepping out into the hallway for coffee.</p>
+<p>The cleanroom plunged into darkness. The LiDAR feed showed the room turning pitch black.</p>
+<p>Two seconds later, the photodiode on Smith's monitor registered the sudden drop in room lux (LUX: 2.1).</p>
+<p><em>PING.</em></p>
+<p>"Light sensor triggered!" Sarah gasped, her eyes widening. "The ALS detected room blackout. Payload is executing!"</p>
+<p>On the TEMPEST display, Smith’s case spreadsheet was instantly overwritten by a complex, high-resolution vector schematic of the entire forensic facility. The layout detailed every reinforced wall, ventilation shaft, security laser grid, and the precise power conduit feeding Vault-Locker 4B.</p>
+<p>As the unshielded monitor rendered the dense vector lines, its logic board leaked electromagnetic pulses into the room. The intercepted light fixture caught the stray radiation, modulating it into a high-speed data stream that beamed straight into the van's telescope.</p>
+<p>The green progress bar on Sarah’s console began to fill rapidly:<br />
+TEMPEST RASTER RECONSTRUCTION: 42%... 65%... 83%...</p>
+<p>"It's streaming!" Tony whispered, holding his breath. "Come on... ten more seconds..."</p>
+<p>Then, the LiDAR screen flashed.</p>
+<p>"Tony! Corridor movement!" Sarah warned, pointing at the green wireframe display.</p>
+<p>Dr. Smith wasn't staying down in the breakroom—he had only grabbed a fresh water cup from the hallway dispenser. The LiDAR point cloud captured his green silhouette walking back toward the cleanroom door.</p>
+<p>TEMPEST RASTER RECONSTRUCTION: 91%...</p>
+<p>"He's at the threshold!" Tony rasped, his heart slamming against his ribs. "He's reaching for the wall switch!"</p>
+<p>95%...</p>
+<p>Dr. Smith pressed his thumb against the light switch and flipped the overhead fluorescents back on.</p>
+<p>A harsh spike of white light flooded the cleanroom.</p>
+<p>The workstation's Ambient Light Sensor registered the sudden, violent surge in light intensity: LUX: 240.0.</p>
+<p><em>INSTANT TRIGGER: LUX &gt; 50.</em></p>
+<p>Before Dr. Smith's eyes could even adjust to the bright fluorescent glare as he stepped across the threshold, the IronKey microcode executed in a fraction of a millisecond.</p>
+<p><em>CLACK-POP.</em></p>
+<p>The vector blueprint vanished from the cleanroom monitor. The memory buffer flushed, and Smith's original forensic case spreadsheet snapped cleanly back onto the screen.</p>
+<p>Dr. Smith blinked against the overhead light, took a sip of his water, and walked back over to his desk. He glanced at his monitor, saw his case files exactly as he had left them, and sat back down in his leather chair, completely oblivious to the digital heist that had just taken place.</p>
+<p>Inside the dark, freezing van, Sarah’s monitor flashed a brilliant emerald banner:</p>
+<p>[DOWNLOAD COMPLETE. ARCHITECTURAL SCHEMATIC PARSED: 100% INTEGRITY]<br />
+FILE SAVED: LEVEL-3_STRUCTURAL_FLOORPLANS.DWG</p>
+<p>Silence collapsed over the van, broken only by the steady drumming of November rain on the roof.</p>
+<p>Sarah collapsed back into her mesh chair, a long, trembling exhale escaping her lips. Her forehead was slick with cold sweat, but her eyes were glowing with victory.</p>
+<p>Tony looked from the glowing green blueprint on the screen to Sarah, a slow, disbelieving grin spreading across his face.</p>
+<p>"Using the monitor's light sensor to detect him turning the lights back on..." Tony whispered, shaking his head in absolute awe. "That was brilliant, Sarah."</p>
+<p>"Never trust a timer when you can let the target pull his own tripwire," Sarah rasped, her hands still shaking as she saved the vector file to an encrypted drive. She looked over at him, her eyes sharp and victorious. "We have the blueprints, Tony."</p>
+
+ <img src=image/floorplan.png width="800">
+  
+<p>Tony turned the ignition key, and the van's diesel engine purred smoothly to life, warmth finally bleeding back into the cabin.</p>
+<p>"Phase Three complete," Tony said, shifting into drive. "Let's go take Vault-Locker Four-B apart."</p>
+
+<hr>
+  
+<p><strong>Act 4: The Blind Jump</strong></p>
+<p>The vent grill on the roof of the facility was heavy, galvanized steel. Tony used a specialized pneumatic torque wrench to back out the security screws, lifting the grate just enough for Sarah to slide her inspection scope inside.</p>
+<p>Below them lay the labyrinth: a pitch-black network of brushed-aluminum HVAC ducts leading straight into the air-gapped core of the forensic lab.</p>
+<p>Sarah reached into a padded hard-case and lifted the asset that Henry had given her a week earlier. It was nicknamed <em>The Viper-Centipede</em>—a six-inch, articulation-jointed robotic chassis covered in a synthetic, sound-dampening carbon-fiber skin. It didn’t have wheels; it used thousands of microscopic, gecko-inspired adhesive pads along its belly to move completely silently over metal.</p>
+<p>"No wireless antennas, no RF transceivers, no GPS," Tony said, checking his tactical watch. "The second it drops past that lip, it’s completely deaf and dumb."</p>
+<p>"That’s the point," Sarah replied, using a magnetic stylus to line up the robot's optical sensor with her tablet screen for the final data injection. "The building is a full TEMPEST Faraday cage. If this thing radiated even a single microwatt of Wi-Fi or Bluetooth to talk to us, the lab's spectrum-monitoring software would flag the anomaly and flood the ducts with fire-suppressant gas. It has to be an absolute ghost."</p>
+<p>"Explain the logic trees to me one more time," Tony muttered, keeping his eyes on the dark alley below the roofline. "I don't like putting our lives in the hands of an algorithm."</p>
+<p>"It's not just an algorithm; it's a closed-loop neural net," Sarah said, typing a final string of code. "I’ve uploaded the architectural blueprints we stole via the VLC bulb. The Viper knows the physical geometry of every duct, junction box, and conduit in that wing. It has three distinct operational directives: Plan A, B, and C."</p>
+<p>"Walk me through them."</p>
+<p>"Plan A is the surgical strike," Sarah explained, her finger tracing a green path on her tablet. "The Viper navigates to the primary security backbone junction box outside the vault. It uses its micro-probes to pierce the insulation of the CCTV and pneumatic lock lines. It spoofs the video feed into a continuous loop and bleeds the air pressure to open the vault door. If it pulls that off, we walk in and out like guests."</p>
+<p>"And if it hits a digital firewall?"</p>
+<p>"Then it switches to Plan B," Sarah’s voice dropped, matching the chill of the rain. "If the network detects the physical tap, the Viper will instantly kill the connection, retreat, and hunt for the facility's auxiliary climate-control node. It will intentionally short-circuit the local power relays, forcing the vault’s electronic locks into <em>Fail-Safe</em> mode. The door will unlock, but the building’s backup alarms will trip. That cuts our extraction window down to exactly sixty seconds before full SWAT arrival."</p>
+<p>"And Plan C?" Tony asked, looking down into the black throat of the vent.</p>
+<p>"The scorched-earth protocol," Sarah said flatly. "If the Viper gets trapped, cornered by internal maintenance drones, or its processing core detects it’s been compromised by an active network counter-attack, it locks its magnetic feet to the main server rack and detonates its internal magnesium core. It will melt the entire security matrix into slag. The vault doors will drop like guillotines, and the facility goes to total black."</p>
+<p>Tony let out a slow, sharp breath. "And once it’s down there, we have no way of knowing which plan it picked?"</p>
+<p>"None," Sarah said, looking up at him, her eyes steady. "No feedback. No status pings. We won’t know if it’s executing Plan A perfectly, or if it blew itself up on Plan C. We just have to watch the physical security doors and guess based on what happens to the building's grid."</p>
+<p>She set the tiny robot onto the rim of the open duct. The Viper’s lens flickered once with a faint, crimson light as its onboard processors spun up, mapping the immediate darkness.</p>
+<p>"Data injection complete. System is autonomous," Sarah whispered.</p>
+
+<p> <a href="https://youtu.be/W2IPaM3k3wQ" target=blank>
+  <img src=image/ch06-04.png width="800">
+   ▶️YouTube short Vidoe 🎬 of this scene </a>
+</p>
+  
+<p>Tony watched the carbon-fiber segments of the machine flex. With a faint, almost imperceptible <em>shhh-shhh</em> sound, the robot slipped over the edge, clinging to the vertical wall of the aluminum shaft, and vanished into the darkness of the high-security facility.</p>
+<p>Sarah checked her timer, hitting the ignition mark.</p>
+<p>"The Viper is in the dark," she said. "Time to breach starts now."</p>
+
+<p>  <img src=image/ch06-04-02.png width="800"> </p> 
+
+
+<hr>
+  
+<p><strong>Act 5: Sixty Seconds to Blackout</strong></p>
+<p>The pneumatic lock on the vault’s primary containment door didn't click open; it gasped. It was a wet, low-frequency hiss—the unmistakable sound of the autonomous micro-robot deep in the HVAC line successfully executing its isolated script to bleed the pneumatic pressure lines.</p>
+<p>The three-ton steel door drifted open by a mere four inches.</p>
+<p>Tony and Sarah waited in the freezing dark of the maintenance corridor, their backs pressed against the concrete wall. Three feet away stood the massive, multi-layered vault door of the Level-3 forensic core.</p>
+<p>According to Sarah's programming, if the autonomous Viper robot inside the vents successfully executed <strong>Plan A</strong>, the door's electromagnetic seals would bleed silently, drifting open like a whisper.</p>
+<p>Tony kept his eyes glued to his wrist chronometer. <em>02:14:00.</em> The designated execution window closed.</p>
+<p>Nothing happened. The heavy steel door remained immovably sealed.</p>
+<p>"Did the machine die down there?" Tony whispered, his hand tightening on his weapon.</p>
+<p>Before Sarah could answer, the corridor was suddenly split by a harsh, mechanical <em>CLANG</em> that vibrated through the floorboards. It wasn't the smooth release of a latch—it was the sound of three-ton emergency locking bolts being violently retracted by back-up solenoids. Simultaneously, the green indicator light on the wall matrix snapped dead, replaced by a flashing, amber warning display.</p>
+<p>A digitized voice crackled over the local intercom: [WARNING: NETWORK DISRUPTION DETECTED. INFRASTRUCTURE ROUTING MALFUNCTION. CORE IS COMMENCING ISOLATED PROTOCOL.]</p>
+<p>Sarah’s face went pale beneath her tactical goggles. She lunged toward the heavy steel door, throwing her shoulder against it as it gasped open by a mere four inches.</p>
+<p>"It's not Plan A!" Sarah yelled over the rising whine of the building's internal sirens. "The Viper hit a digital firewall—it executed <strong>Plan B</strong>! It cut the local power node to force a magnetic hardware fail-safe!"</p>
+<p>"How much time do we have before the auxiliary power grid kicks back in and welds these doors shut?" Tony asked, shoving his crowbar into the gap to widen the breach.</p>
+<p>"The facility's backup diesel generators take exactly one minute to sequence and cycle online," Sarah said, pulling her modular diagnostic deck from her vest. "The secondary automated security sweep is already tracking the power drop. <strong>Tony, we have exactly sixty seconds before this entire floor goes to total lock. Sixty seconds to black.</strong> Move!"</p>
+
+
+<p> <a href="https://youtu.be/lXfm_BRHj_Y" target=blank>
+  <img src=image/ch06-05.png width="800">
+   ▶️YouTube short Vidoe 🎬 of this scene </a>
+</p>
+<p>Tony checked his wrist chronometer as they squeezed through the opening. The digital display blinked: <strong>[00:01]</strong>. The countdown hadn't been predicted; it had just been violently thrust upon them by a machine they couldn't control.</p>
+<p>"Go! Go!" Sarah hissed, shedding her tactical backpack as she squeezed through the narrow gap.</p>
+<p>"Locker 4B is the upper matrix," Sarah said, her voice tight beneath her carbon-filter respirator. She slammed a heavy, black control box onto the terminal desk below a bank of brushed-steel digital storage lockers.</p>
+<p>"Digital interface has independent battery backup," Tony observed sharply, drawing a compact pneumatic captive-bolt pistol from his thigh holster. "No time to patch the logic board."</p>
+<p>He pressed the muzzle of the tool directly against the glass of the digital keypad for Locker 4B and squeezed the trigger. <em>Thump.</em> A hardened tungsten-carbide bolt shattered the digital screen, exposing the copper data bus underneath.</p>
+<p><strong>[00:15]</strong>.</p>
+<p>Sarah didn't hesitate. She jammed a multi-pronged hardware key into the fractured wiring. Her handheld deck initiated an automated brute-force handshake, forcing the stolen domain admin credentials down the line.</p>
+<p><em>Green light. Flash.</em></p>
+<p>The electromagnetic latch inside the locker retracted with a heavy, satisfying <em>clack</em>. Tony threw the door open, grabbed the original 3.5-inch forensic hard drive, and slid it into a padded, static-shielded slot on his chest rig.</p>
+<p>"Primary secured!" Tony called out. "Where's the safe?"</p>
+<p>"Corner bulkhead. Archive Safe 02," Sarah said, already running toward a monolithic, floor-mounted steel safe. She flashed her tactical light across the door. Her face fell. "Dammit. It’s a mechanical four-wheel combination tumbler. Group 1 rating. No digital bus."</p>
+<p><strong>[00:32]</strong>.</p>
+<p>"Step back," Tony ordered, pulling a roll of dull gray, flexible metallic tape from his utility belt. This was a linear-shaped thermite charge—a chemical cutting tool engineered for silent, high-temperature structural breaching.</p>
+<p>He pressed the adhesive strip directly along the safe’s exposed heavy-duty external hinges, smoothing it down with his thumb. He clipped a wireless electronic igniter to the base of the tape and grabbed Sarah by the shoulder, forcing her down behind a steel-reinforced lab bench.</p>
+<p>"Eyes down! Burn coming!"</p>
+<p>He hit the trigger button.</p>
+<p>There was no concussive blast, no thunderous explosion to echo through the empty building. Instead, the vault was plunged into a terrifying, blinding magnesium glare. The thermite reacted at 2,500°C, emitting a fierce, violent hiss like an angry swarm of wasps. The chemical flame sliced through the hardened tungsten-steel hinges in a matter of seconds, dropping liquid iron onto the floor tiles in spitting, brilliant white beads.</p>
+<p><strong>[00:46]</strong>.</p>
+<p>The glare died instantly, leaving thick, toxic white smoke swirling through the room.</p>
+<p>Tony didn't wait for the air to clear. His respirator filter whined as he lunged forward, wedging a titanium pry bar into the glowing, molten seam of the safe's door. He threw his entire weight against the bar. With a screech of tearing metal, the scorched door collapsed forward, crashing onto the floor.</p>
+<p>The interior of the safe was an oven. The magnetic tape inside the backup cartridges would begin to warp if exposed to this ambient heat for more than fifteen seconds.</p>
+<p><strong>[00:52]</strong>.</p>
+<p>Tony couldn't use his hands—the metal shelves were still glowing dull red. He reached into his vest and pulled out a specialized handle tipped with a matrix of super-strong neodymium magnets. He thrust the magnetic tool into the smoking cavity of the safe.</p>
+<p><em>Snap-clack.</em></p>
+<p>The high-density magnetic fields locked onto the metallic shielding of the two backup tape cartridges. He yanked his arm back, tearing the cassettes out of the heat, and dropped them into a heavily insulated, carbon-fiber thermal pouch strapped to Sarah’s hip.</p>
+<p>"Got them! We are clear!" Tony shouted.</p>
+<p><strong>[00:56]</strong>.</p>
+<p>High above them, inside the darkness of the main ventilation shaft, their autonomous micro-robot hit its final terminal logic barrier. Detected by the lab's secondary intrusion defense, the machine executed Plan C.</p>
+<p>A muffled, dull <em>pop</em> vibrated through the ceiling grid as the robot’s onboard magnesium payload detonated, instantly melting the building's main network routing switches into an unrecoverable lump of slag.</p>
+<p>The emergency amber beacons cut out. The facility plunged into pitch, suffocating darkness.</p>
+<p>Deprived of all magnetic suspension power, the heavy three-ton steel vault door began to drop toward the floor frame like a guillotine.</p>
+<p>"Move!" Tony roared, lunging blindly through the smoke.</p>
+<p>He grabbed Sarah’s arm, pulling her forward as they threw themselves flat onto the slick epoxy floor. They slid beneath the descending mass of metal just as the heavy air-locked door slammed into the concrete sill with a thunderous, bone-rattling <em>boom</em> that sealed the room shut behind them.</p>
+<p>They lay on their backs in the dark corridor, their chests heaving, listening to the sudden, distant wail of the building's backup sirens beginning to scream outside.</p>
+<p>Tony reached down, pressed the button on his chronometer, illuminating the screen in pale blue light.</p>
+<p><strong>[01:00]</strong>.</p>
+<p>He looked over at Sarah in the dark, a grim smile cutting through the sweat on his face. "Right on time. Let's go find the van."</p>
+
+<hr>
+  
+<p><strong>Act 6: The Slag Trail</strong></p>
+<p>Tony slammed the van’s rear doors shut, the heavy metallic <em>bang</em> echoing like a gunshot through the rain-slicked alleyway. He threw himself into the driver's seat, his hands slick with sweat as he twisted the ignition key. The modified V8 engine purred to life with a low, predatory growl, completely devoid of the typical exhaust sputter.</p>
+<p>Beside him, Sarah was already strapped into the navigation chair, her fingers slamming across her mechanical keyboard before the vehicle had even cleared the curb.</p>
+<p>Outside, the captial forensic facility was lighting up like a Christmas tree [| citations]. Blue emergency strobes sliced through the torrential downpour, casting long, jagged shadows against the concrete walls. The building's external sirens were a deafening, oscillating shriek, wailing into the midnight air.</p>
+<p>Tony slammed the van into gear, spinning the tires against the wet asphalt before catching traction and pulling smoothly into the dark perimeter road.</p>
+<p>"Talk to me, Sarah," Tony barked, his eyes tracking the side mirrors as they cleared the outer security perimeter. "What did the grid look like when we broke lock? Tell me the Viper pulled off Plan B."</p>
+<p>Sarah didn't answer immediately. Her eyes were fixed on the panoramic displays. The clean data streams that had been cascading throughout the night were gone, replaced by a jagged mountain of flatlined telemetry graphs.</p>
+<p>"The VLC link is completely dead," Sarah said, her voice dropping into a tense, icy register. "I’m scanning the residual RF leakage from the facility's main security backbone."</p>
+<p>She tapped a diagnostic macro. The screen flashed a brilliant, unforgiving crimson.</p>
+<p>"Wait..." Sarah's fingers suddenly froze over the mechanical keys. She stared at the flatlined graphs, her pupils dilating. "No. It wasn’t Plan B."</p>
+<p>Tony swerved to avoid a puddle, his foot pressing harder on the gas as a pair of distant police headlights rounded the corner a quarter-mile behind them. "What do you mean? In the vault, the main doors lost power and the auxiliary breakers started counting down. That’s the textbook signature of Plan B's local short-circuit."</p>
+<p>"The robot lied to the building’s system, Tony. And it lied to us," Sarah whispered, pulling up a cached thermal log from the final three seconds of the operation. " The internal temperature logs for the main cleanroom routing cabinet just spiked to 1200°C before the sensor melted. At exactly 02:14:03, the facility's central firewall managed to isolate the Viper's physical tap. The machine knew it couldn't fulfill the clean bypass of Plan A."</p>
+<p>"So it forced the backup power failure," Tony said. "Plan B."</p>
+<p>"No," Sarah said, her voice shaking with awe. "If it had only executed Plan B, the facility's network log would have preserved the keystroke telemetry we intercepted. The security team would have known someone copied the admin credentials. They would have tracked our signal and locked down the highway before we hit back to <strong>Saltmere</strong>."</p>
+<p>Tony glanced at her, then back at the wet, black asphalt. "Then what did it do?"</p>
+<p>"It didn’t hesitate and executed <strong>Plan B and Plan C simultaneously</strong>," Sarah breathed, pointing to a catastrophic thermal spike on her monitor. "It overrode its own safety parameters. It used its final millisecond of power to cut the local line to free us from the vault, and in the exact same heartbeat, it locked its magnetic treads to the core server rack and detonated its magnesium payload."</p>
+<p>Tony’s grip tightened on the steering wheel until his knuckles turned white. <em>Plan C. The scorched-earth protocol.</em></p>
+<p>"The machine saved us," Tony muttered, realization washing over him. The countdown wasn't a failure—it was a countdown to a complete meltdown. He pushed the accelerator down, the van surging forward, blending seamlessly into the late-night traffic of the interstate highway.</p>
+<p>"It did exactly what a human agent would have done," Sarah said softly, closing the lid of her primary ruggedized laptop. "It wiped the trail. Every byte of CCTV footage, every electronic footprint, every log of our admin credentials—it’s all a pool of liquid silicon and copper on the floor of the server room now. To the inspectors, it’s going to look like a catastrophic electrical explosion in the HVAC infrastructure."</p>
+
+<p> <a href="https://youtu.be/0W6wosR1_tM" target=blank>
+  <img src=image/ch06-06-02.png width="800">
+   ▶️YouTube short Vidoe 🎬 of this scene </a>
+</p>
+  
+<p>Tony looked down at his chest rig, where the original forensic hard drive sat securely in its padded pocket, its status light blinking a reassuring amber. On Sarah’s lap, the carbon-fiber thermal pouch held the two scorched backup magnetic tapes, safely insulated from the firestorm they had just left behind.</p>
+<p>"The robot played us all," Tony said, adjusting his mirrors as the distant blue lights of the police cruisers vanished into the rainy dark behind them. "But we left a ghost in that ceiling, Sarah. When the forensic investigators dig through that slag, they’re going to wonder what kind of machine knows how to commit suicide to protect its handlers."</p>
+<p>Sarah looked out the window at the blurred city lights, the rain streaking across the glass like tears. "Let them wonder. By the time they figure out the LED panel was a Trojan horse, we'll be vanished in the Capital."</p>
+
+<hr>
+  
+<p><strong>Act 7: The Slag Analysis</strong></p>
+<p>Director Rhodes stood in the absolute dark of the core server vault, the cold beams of three tactical flashlights cutting through a heavy, acrid fog of vaporized plastics. The room was deathly quiet, save for the dripping of industrial coolant fluid hitting the floor plates. It smelled of burned copper, burnt rubber, and iron.</p>
+<p>"Where is the forensic sweep team?" Rhodes’s voice was dangerously flat, his silhouette rigid against the ruins of his multi-million-dollar facility.</p>
+<p>"Outside, Director," replied Special Agent Carter, stepping over a puddle of soot-stained water. He pointed his flashlight at the center of the room. "But they aren't going to find anything to swab. There is no biological data left. There is no digital data left. Look at the primary rack."</p>
+<p>The central server enclosure—a military-grade, armor-shielded cabinet that had housed the servers—was unrecognizable. It looked as though a miniature volcano had erupted directly inside the housing. The top-level core switches were gone, replaced by a vertical, smoking cavity that sliced straight down through twenty layers of blade servers.</p>
+<p>"This wasn't an explosive device," Carter said, adjusting his respirator mask. "A concussive blast would have tripped our overpressure sensors and triggered the localized Halon gas suppression systems. The firewalls would have isolated the data. This was purely chemical thermal penetration."</p>
+<p>"Thermite?" Rhodes stepped closer, squinting into the glowing, cherry-red ruins of the main storage matrix.</p>
+<p>"Industrial-grade magnesium composite," Carter corrected, aiming his light at the ceiling directly above the ruined rack. "An airborne infiltration asset entered through the high-velocity CRAC cooling ducts. It bypassed the entire corridor security grid by crawling through the infrastructure. Once it reached the cold aisle, it positioned itself directly over the main network switches and ignited."</p>
+<p>Carter pulled a pair of long titanium forceps from his forensic kit and reached into the molten, cooled slag at the base of the cabinet. With a sharp crunch, he pulled out a small, twisted lump of carbon-fiber skin fused to a heavily scorched, nickel-alloy plate.</p>
+<p>"Look at the flow pattern of the iron," Carter explained, tracing the hardened drips with the tip of his forceps. "The liquid metal didn't blast outward; it flowed downward under pure gravity. It cascaded from the top switch through every single solid-state drive in the array, melting the NAND flash storage chips at three thousand degrees. Our own air-conditioning system acted as a forge blower, feeding oxygen straight into the chemical flame. It accelerated the burn. They used our own cooling system to turn the server room into an incinerator."</p>
+<p>Rhodes ran a gloved hand over the charred edge of the cabinet. "And the system logs? The physical hard-wired backup drives?"</p>
+<p>"Melted into a single block of silicon and copper slag on the floor," Carter said flatly. "Every surveillance footage, every system login record, every backup tape cartridge in the archive safe—completely wiped. The physical structure of the data arrays has been altered at the atomic level. It’s the neatest digital execution I’ve ever seen."</p>
+<p>Rhodes turned back toward the dark corridor, his jaw clenched, the amber light of his flashlight reflecting off his cold eyes.</p>
+<p>"This wasn't a standard corporate extraction," Rhodes muttered, his voice echoing in the ruined sever room. "A common hacker copies the file and leaves. Whoever did this didn't just want the drive, Carter. They wanted to make sure we couldn't rebuild the template. They knew exactly how our automated firewalls would react, and they built a machine that knew how to commit suicide to preserve their anonymity."</p>
+<p>"What are your orders, Director?"</p>
+<p>Rhodes checked his encrypted satellite device. " Access street surveillance footage of nearby shops from the past 48 hours, isolate the delivery logs for every cleanroom fixture replaced this month, and trace that carbon-fiber chassis. I want to know who engineered a ghost that can execute a self-destruct script before my network can even scream.”</p>
+
+  <p> <a href="https://youtu.be/-NteGW4GZUk" target=blank>
+  <img src=image/ch06-07.png width="800">
+   ▶️YouTube short Vidoe 🎬 of this scene </a>
+</p>
+  
+  
+<hr>
+<center><a href=index.html>Home</a>|<a href=ch07.html> Next Chapter </a></center>
+<p>
+
+
+  <!-- Google Translate Element -->
+  <div id="google_translate_element"></div>
+
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement(
+        { pageLanguage: 'en', includedLanguages: 'zh-TW,en' },
+        'google_translate_element'
+      );
+    }
+
+    function translateTo(langCode) {
+      const select = document.querySelector('.goog-te-combo');
+      if (select) {
+        select.value = langCode;
+        select.dispatchEvent(new Event('change'));
+      }
+    }
+  </script>
+  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</body>
+</html>
