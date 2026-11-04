@@ -1,0 +1,159 @@
+/* ==========================================================================
+   Modern HTML Base Stylesheet
+   ========================================================================== */
+
+/* 1. CSS Custom Properties (Theme Setup) */
+:root {
+  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+  
+  /* Light Theme Colors */
+  --bg-color: #fcfcfc;
+  --text-color: #212529;
+  --heading-color: #0f172a;
+  --accent-color: #2563eb;
+  --border-color: #e2e8f0;
+  --code-bg: #f1f5f9;
+  --quote-border: #3b82f6;
+}
+
+/* Dark Theme Support (Automatic based on user system preference) */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: #0f172a;
+    --text-color: #cbd5e1;
+    --heading-color: #f8fafc;
+    --accent-color: #60a5fa;
+    --border-color: #334155;
+    --code-bg: #1e293b;
+    --quote-border: #60a5fa;
+  }
+}
+
+
+body.dark-mode {
+  --bg-color: #0f172a;
+  --text-color: #cbd5e1;
+  --primary-color: #60a5fa;
+  --border-color: #334155;
+  --code-bg: #1e293b;
+}
+
+/* 2. Page & Layout Defaults */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: 1.125rem; /* 18px base for optimal readability */
+  line-height: 1.7;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  max-width: 70ch; /* ~70 characters per line for ideal reading length */
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem 1.5rem;
+}
+
+/* 3. Typography */
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.25;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  color: var(--text-color); /* Ensures headings shift to white/slate in dark mode */
+
+}
+
+h1 { font-size: 2.25rem; margin-top: 1em; }
+h2 { font-size: 1.75rem; }
+h3 { font-size: 1.35rem; }
+
+p {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+}
+
+a {
+  color: var(--accent-color);
+  text-decoration-skip-ink: auto;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+/* 4. Lists & Blockquotes */
+ul, ol {
+  padding-left: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+li {
+  margin-bottom: 0.5rem;
+}
+
+blockquote {
+  margin: 1.5rem 0;
+  padding: 0.5rem 1rem 0.5rem 1.25rem;
+  border-left: 4px solid var(--quote-border);
+  background: var(--code-bg);
+  font-style: italic;
+}
+
+blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+/* 5. Code & Media Elements */
+code {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+  background-color: var(--code-bg);
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+}
+
+pre {
+  background-color: var(--code-bg);
+  padding: 1rem;
+  overflow-x: auto;
+  border-radius: 6px;
+  margin-bottom: 1.5rem;
+}
+
+pre code {
+  padding: 0;
+  background: none;
+}
+
+img, video, iframe {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+  margin: 1.5rem 0;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--border-color);
+  margin: 3rem 0;
+}
+
+/* 6. Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.5rem;
+}
+
+th, td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+}
+
+th {
+  color: var(--heading-color);
+  font-weight: 600;
+}
